@@ -1,0 +1,15 @@
+@import "variables";
+
+// responsive breakpoint
+$breakpoints: (
+  'sm': 'screen and (max-width: 480px)', //スマホ幅
+  'md': 'screen and (max-width: 896px)', //タブレット縦
+  'lg': 'screen and (max-width: 1024px)',　//タブレット横
+  'xl': 'screen and (max-width: 1366px)', //フルスクリーン
+) !default;
+
+@mixin mq($breakpoint: sm) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
